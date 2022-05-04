@@ -1,3 +1,4 @@
+precision highp float;
 uniform mat4 matrix;
 attribute vec4 vertex;
 attribute vec4 color;
