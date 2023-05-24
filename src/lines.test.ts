@@ -335,7 +335,7 @@ describe("Lines", () => {
         lines.settings.opacity
       );
       expect(lines.allVertices).toEqual(expected);
-      expect(lines.allVerticesTyped).toEqual(new Float64Array(expected));
+      expect(lines.allVerticesTyped).toEqual(new Float32Array(expected));
     });
   });
   describe("drawOnCanvas", () => {
