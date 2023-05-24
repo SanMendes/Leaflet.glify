@@ -127,9 +127,9 @@ describe("Points", () => {
     });
     it("sets this.typedVertices correctly", () => {
       const points = getPoints();
-      points.typedVertices = new Float32Array(0);
+      points.typedVertices = new Float64Array(0);
       points.render();
-      expect(points.typedVertices).toEqual(new Float32Array(points.vertices));
+      expect(points.typedVertices).toEqual(new Float64Array(points.vertices));
     });
     it("sets this.mapMatrix size to canvas", () => {
       const points = getPoints();

@@ -58,7 +58,7 @@ export class Lines extends BaseGlLayer<ILinesSettings> {
   scale = Infinity;
   bytes = 6;
   allVertices: number[] = [];
-  allVerticesTyped: Float32Array = new Float32Array(0);
+  allVerticesTyped: Float64Array = new Float64Array(0);
   vertices: LineFeatureVertices[] = [];
   aPointSize = -1;
   settings: Partial<ILinesSettings>;
@@ -218,7 +218,7 @@ export class Lines extends BaseGlLayer<ILinesSettings> {
 
     this.vertices = vertices;
     this.allVertices = allVertices;
-    this.allVerticesTyped = new Float32Array(allVertices);
+    this.allVerticesTyped = new Float64Array(allVertices);
 
     return this;
   }

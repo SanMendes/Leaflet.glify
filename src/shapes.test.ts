@@ -155,7 +155,7 @@ describe("Shapes", () => {
       );
       expect(bufferDataSpy).toHaveBeenCalledWith(
         gl.ARRAY_BUFFER,
-        new Float32Array(0),
+        new Float64Array(0),
         gl.STATIC_DRAW
       );
       expect(vertexAttribPointerSpy).toHaveBeenCalledWith(

@@ -4,7 +4,7 @@ describe("MapMatrix", () => {
   describe("constructor", () => {
     it("sets this.array with empty typed array", () => {
       const mapMatrix = new MapMatrix();
-      expect(mapMatrix.array).toEqual(new Float32Array(16));
+      expect(mapMatrix.array).toEqual(new Float64Array(16));
     });
   });
   describe("setSize", () => {
@@ -16,14 +16,14 @@ describe("MapMatrix", () => {
       const row3 = [0, 0, 0, 0];
       const row4 = [-1, 1, 0, 1];
       expect(mapMatrix.array).toEqual(
-        new Float32Array([...row1, ...row2, ...row3, ...row4])
+        new Float64Array([...row1, ...row2, ...row3, ...row4])
       );
     });
   });
   describe("translateTo", () => {
     it("translates correctly", () => {
       const mapMatrix = new MapMatrix();
-      mapMatrix.array = new Float32Array([
+      mapMatrix.array = new Float64Array([
         1,
         2,
         3,
@@ -47,7 +47,7 @@ describe("MapMatrix", () => {
       const row3 = [9, 10, 11, 12];
       const row4 = [9, 61, 15, 16];
       expect(mapMatrix.array).toEqual(
-        new Float32Array([...row1, ...row2, ...row3, ...row4])
+        new Float64Array([...row1, ...row2, ...row3, ...row4])
       );
     });
   });

@@ -88,7 +88,7 @@ export class Shapes extends BaseGlLayer {
 
     const { canvas, gl, layer, vertices, mapMatrix } = this;
     const vertexBuffer = this.getBuffer("vertex");
-    const vertexArray = new Float32Array(vertices);
+    const vertexArray = new Float64Array(vertices);
     const byteCount = vertexArray.BYTES_PER_ELEMENT;
     const vertexLocation = this.getAttributeLocation("vertex");
     gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
@@ -275,7 +275,7 @@ export class Shapes extends BaseGlLayer {
     gl.uniformMatrix4fv(this.matrix, false, mapMatrix.array);
     if (border) {
       const vertexLinesBuffer = this.getBuffer("vertexLines");
-      const vertexLinesTypedArray = new Float32Array(vertexLines);
+      const vertexLinesTypedArray = new Float64Array(vertexLines);
       const size = vertexLinesTypedArray.BYTES_PER_ELEMENT;
       const vertex = this.getAttributeLocation("vertex");
       gl.bindBuffer(gl.ARRAY_BUFFER, null);
@@ -293,7 +293,7 @@ export class Shapes extends BaseGlLayer {
       gl.drawArrays(gl.LINES, 0, vertexLines.length / this.bytes);
 
       const vertexBuffer = this.getBuffer("vertex");
-      const verticesTypedArray = new Float32Array(vertices);
+      const verticesTypedArray = new Float64Array(vertices);
       gl.bindBuffer(gl.ARRAY_BUFFER, null);
       gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
       gl.bufferData(gl.ARRAY_BUFFER, verticesTypedArray, gl.STATIC_DRAW);
