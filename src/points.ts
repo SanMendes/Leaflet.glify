@@ -64,7 +64,7 @@ export class Points extends BaseGlLayer<IPointsSettings> {
 
   allLatLngLookup: IPointVertex[] = [];
   vertices: number[] = [];
-  typedVertices: Float32Array = new Float32Array();
+  typedVertices: Float64Array = new Float64Array();
   dataFormat: "Array" | "GeoJson.FeatureCollection";
   settings: Partial<IPointsSettings>;
   active: boolean;
@@ -80,6 +80,7 @@ export class Points extends BaseGlLayer<IPointsSettings> {
   }
 
   constructor(settings: Partial<IPointsSettings>) {
+    console.log('Changes worked!');
     super(settings);
     this.settings = { ...defaults, ...settings };
 
@@ -110,7 +111,7 @@ export class Points extends BaseGlLayer<IPointsSettings> {
     const { gl, canvas, layer, vertices, mapMatrix } = this;
     const matrix = (this.matrix = this.getUniformLocation("matrix"));
     const verticesBuffer = this.getBuffer("vertices");
-    const verticesTyped = (this.typedVertices = new Float32Array(vertices));
+    const verticesTyped = (this.typedVertices = new Float64Array(vertices));
     const byteCount = verticesTyped.BYTES_PER_ELEMENT;
     // set the matrix to some that makes 1 unit 1 pixel.
     mapMatrix.setSize(canvas.width, canvas.height);
