@@ -183,9 +183,9 @@ export class Points extends BaseGlLayer<IPointsSettings> {
       for (let i = 0; i < max; i++) {
         rawLatLng = data[i];
         key =
-          rawLatLng[latitudeKey].toFixed(2) +
+          rawLatLng[latitudeKey].toFixed(15) +
           "x" +
-          rawLatLng[longitudeKey].toFixed(2);
+          rawLatLng[longitudeKey].toFixed(15);
         latLng = new LatLng(rawLatLng[latitudeKey], rawLatLng[longitudeKey]);
         pixel = map.project(latLng, 0);
 
@@ -236,9 +236,9 @@ export class Points extends BaseGlLayer<IPointsSettings> {
         const feature = data.features[i] as Feature<GeoPoint>;
         rawLatLng = feature.geometry.coordinates;
         key =
-          rawLatLng[latitudeKey].toFixed(2) +
+          rawLatLng[latitudeKey].toFixed(15) +
           "x" +
-          rawLatLng[longitudeKey].toFixed(2);
+          rawLatLng[longitudeKey].toFixed(15);
         latLng = new LatLng(rawLatLng[latitudeKey], rawLatLng[longitudeKey]);
         pixel = map.project(latLng, 0);
 
@@ -333,7 +333,7 @@ export class Points extends BaseGlLayer<IPointsSettings> {
     for (; lat <= latMax; lat += 0.01) {
       lng = coords.lng - 0.03;
       for (; lng <= lngMax; lng += 0.01) {
-        key = lat.toFixed(2) + "x" + lng.toFixed(2);
+        key = lat.toFixed(15) + "x" + lng.toFixed(15);
         found = this.latLngLookup[key];
         if (found) {
           foundI = 0;
