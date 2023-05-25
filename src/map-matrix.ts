@@ -1,7 +1,7 @@
 export class MapMatrix {
-  array: Float64Array;
+  array: Float32Array;
   constructor() {
-    this.array = new Float64Array(16);
+    this.array = new Float32Array(16);
   }
 
   setSize(width: number, height: number): this {

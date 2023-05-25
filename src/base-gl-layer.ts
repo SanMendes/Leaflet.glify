@@ -174,7 +174,7 @@ export abstract class BaseGlLayer<
       canvas.getContext("webgl", { preserveDrawingBuffer }) ??
       canvas.getContext("experimental-webgl", {
         preserveDrawingBuffer,
-      })) as WebGL2RenderingContext;
+      })) as WebGLRenderingContext;
   }
 
   abstract drawOnCanvas(context: ICanvasOverlayDrawEvent): this;
